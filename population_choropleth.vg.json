@@ -3,19 +3,27 @@
   "title": "Population by State, Malaysia (2022)",
   "width": 800,
   "height": 400,
-  "projection": {"type": "equalEarth"},
+  "projection": {"type": "mercator"},
   "data": {
-    "url": "malaysia.geojson",
-    "format": {"type": "json"}
+    "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/malaysia.geojson",
+    "format": {"type": "json", "property": "features"}
     },
   "transform": [
     {
       "lookup": "properties.NAME_1",
       "from": {
-        "data": {"url": "total_population_2022.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/total_population_2022.csv"},
         "key": "state",
         "fields": ["population"]
       }
+    },
+    {
+        "window": [{"op": "sum", "field": "population", "as": "total_population"}],
+        "frame": [null, null]
+    },
+    {
+        "calculate": "datum.population / datum.total_population",
+        "as": "population_normalized"
     }
   ],
   "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
@@ -23,11 +31,13 @@
     "color": {
       "field": "population",
       "type": "quantitative",
-      "scale": {"scheme": "blues"}
+      "scale": {"scheme": "blues"},
+      "title": "Population ('000)"
     },
     "tooltip": [
       {"field": "properties.NAME_1", "type": "nominal", "title": "State"},
-      {"field": "population", "type": "quantitative"}
+      {"field": "population", "type": "quantitative", "title": "Population ('000)"},
+      {"field": "population_normalized", "type": "quantitative", "format": ".2%", "title": "Normalized Population"}
     ]
   }
 }
