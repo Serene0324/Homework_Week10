@@ -1,17 +1,17 @@
-state,date,sex,age_cleaned,age,ethnicity,population
-Johor,1/1/2022,both,overall,overall,overall,4028.3
-Kedah,1/1/2022,both,overall,overall,overall,2163.1
-Kelantan,1/1/2022,both,overall,overall,overall,1830.6
-Melaka,1/1/2022,both,overall,overall,overall,1008.6
-Negeri Sembilan,1/1/2022,both,overall,overall,overall,1207.9
-Pahang,1/1/2022,both,overall,overall,overall,1614.3
-Perak,1/1/2022,both,overall,overall,overall,2514.4
-Perlis,1/1/2022,both,overall,overall,overall,289.8
-Pulau Pinang,1/1/2022,both,overall,overall,overall,1740.9
-Sabah,1/1/2022,both,overall,overall,overall,3414.9
-Sarawak,1/1/2022,both,overall,overall,overall,2473.5
-Selangor,1/1/2022,both,overall,overall,overall,7050.3
-Terengganu,1/1/2022,both,overall,overall,overall,1186.6
-W.P. Kuala Lumpur,1/1/2022,both,overall,overall,overall,1961.2
-W.P. Labuan,1/1/2022,both,overall,overall,overall,96.9
-W.P. Putrajaya,1/1/2022,both,overall,overall,overall,117
+state,population
+Johor,4028.3
+Kedah,2163.1
+Kelantan,1830.6
+Melaka,1008.6
+Negeri Sembilan,1207.9
+Pahang,1614.3
+Perak,2514.4
+Perlis,289.8
+Pulau Pinang,1740.9
+Sabah,3414.9
+Sarawak,2473.5
+Selangor,7050.3
+Terengganu,1186.6
+W.P. Kuala Lumpur,1961.2
+W.P. Labuan,96.9
+W.P. Putrajaya,117
