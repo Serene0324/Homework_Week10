@@ -6,10 +6,6 @@
   "projection": {"type": "mercator"},
   "layer": [
     {
-      "data": {"graticule": true},
-      "mark": {"type": "geoshape", "stroke": "#cccccc", "strokeWidth": 0.5}
-    },
-    {
       "data": {
         "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/malaysia.geojson",
         "format": {"type": "json", "property": "features"}
