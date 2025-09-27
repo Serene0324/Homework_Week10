@@ -1,37 +1,33 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
-  "height": 800,
   "title": "Population by State, Malaysia (2022)",
-  "projection": {"type": "mercator"},
-  "layer": [
+  "width": 800,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "malaysia.geojson",
+    "format": {"type": "json"}
+    },
+  "transform": [
     {
-      "data": {
-        "url": "malaysia.geojson",
-        "format": {"type": "geojson"}
-      },
-      "transform": [
-        {
-          "lookup": "properties.NAME_1",
-          "from": {
-            "data": {"url": "total_population_2022.csv"},
-            "key": "state",
-            "fields": ["population"]
-          }
-        }
-      ],
-      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
-      "encoding": {
-        "color": {
-          "field": "population",
-          "type": "quantitative",
-          "scale": {"scheme": "blues"}
-        },
-        "tooltip": [
-          {"field": "properties.NAME_1", "type": "nominal", "title": "State"},
-          {"field": "population", "type": "quantitative", "title": "Population (000s)"}
-        ]
+      "lookup": "properties.NAME_1",
+      "from": {
+        "data": {"url": "total_population_2022.csv"},
+        "key": "state",
+        "fields": ["population"]
       }
     }
-  ]
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "population",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME_1", "type": "nominal", "title": "State"},
+      {"field": "population", "type": "quantitative"}
+    ]
+  }
 }
