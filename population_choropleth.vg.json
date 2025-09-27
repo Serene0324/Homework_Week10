@@ -3,41 +3,60 @@
   "title": "Population by State, Malaysia (2022)",
   "width": 1200,
   "height": 600,
-  "projection": {"type": "mercator"},
-  "data": {
-    "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/malaysia.geojson",
-    "format": {"type": "json", "property": "features"}
-    },
-  "transform": [
+  "projection": {"type": "equalEarth"},
+  "layer": [
     {
-      "lookup": "properties.NAME_1",
-      "from": {
-        "data": {"url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/total_population_2022.csv"},
-        "key": "state",
-        "fields": ["population"]
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "#e0f7fa"}
+    },
+    {
+      "data": {"graticule": true},
+      "mark": {"type": "geoshape", "stroke": "#cccccc", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/malaysia.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.NAME_1",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/total_population_2022.csv"
+            },
+            "key": "state",
+            "fields": ["population"]
+          }
+        },
+        {
+          "window": [{"op": "sum", "field": "population", "as": "total_pop"}],
+          "frame": [null, null]
+        },
+        {
+          "calculate": "datum.population / datum.total_pop",
+          "as": "population_normalized"
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+      "encoding": {
+        "color": {
+          "field": "population_normalized",
+          "type": "quantitative",
+          "scale": {"scheme": "blues"},
+          "title": "Population (% of total)"
+        },
+        "tooltip": [
+          {"field": "properties.NAME_1", "type": "nominal", "title": "State"},
+          {"field": "population", "type": "quantitative", "title": "Population ('000)"},
+          {
+            "field": "population_normalized",
+            "type": "quantitative",
+            "format": ".2%",
+            "title": "Share of Total"
+          }
+        ]
       }
-    },
-    {
-        "window": [{"op": "sum", "field": "population", "as": "total_population"}],
-        "frame": [null, null]
-    },
-    {
-        "calculate": "datum.population / datum.total_population",
-        "as": "population_normalized"
     }
-  ],
-  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
-  "encoding": {
-    "color": {
-      "field": "population_normalized",
-      "type": "quantitative",
-      "scale": {"scheme": "blues"},
-      "title": "Population Percentage (Normalized)"
-    },
-    "tooltip": [
-      {"field": "properties.NAME_1", "type": "nominal", "title": "State"},
-      {"field": "population", "type": "quantitative", "title": "Population ('000)"},
-      {"field": "population_normalized", "type": "quantitative", "format": ".2%", "title": "Population Percentage"}
-    ]
-  }
+  ]
 }
