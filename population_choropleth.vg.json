@@ -3,12 +3,8 @@
   "title": "Population by State, Malaysia (2022)",
   "width": 1200,
   "height": 600,
-  "projection": {"type": "equalEarth"},
+  "projection": {"type": "mercator"},
   "layer": [
-    {
-      "data": {"sphere": true},
-      "mark": {"type": "geoshape", "fill": "#e0f7fa"}
-    },
     {
       "data": {"graticule": true},
       "mark": {"type": "geoshape", "stroke": "#cccccc", "strokeWidth": 0.5}
