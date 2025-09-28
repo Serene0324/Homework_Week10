@@ -1,10 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Population by State, Malaysia (2022)",
-  "width": 1200,
+  "width": 1000,
   "height": 600,
-  "projection": {"type": "mercator"},
+  "projection": {
+    "type": "mercator",
+    "center": [109.5, 4],
+    "scale": 2850
+  },
   "layer": [
+    {
+        "data": {
+            "graticule": {"step": [3, 3]}
+        },
+        "mark": {"type": "geoshape", "stroke": "lightgray", "fill": "none"}
+    },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/malaysia.geojson",
