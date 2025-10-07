@@ -1,0 +1,145 @@
+state,stage,sex,date,students
+Johor,primary,both,1/1/2022,331205
+Johor,primary,female,1/1/2022,161163
+Johor,primary,male,1/1/2022,170042
+Johor,secondary,both,1/1/2022,238491
+Johor,secondary,female,1/1/2022,117254
+Johor,secondary,male,1/1/2022,121237
+Johor,post_secondary,both,1/1/2022,6938
+Johor,post_secondary,female,1/1/2022,3936
+Johor,post_secondary,male,1/1/2022,3002
+Kedah,primary,both,1/1/2022,188524
+Kedah,primary,female,1/1/2022,92340
+Kedah,primary,male,1/1/2022,96184
+Kedah,secondary,both,1/1/2022,143591
+Kedah,secondary,female,1/1/2022,72060
+Kedah,secondary,male,1/1/2022,71531
+Kedah,post_secondary,both,1/1/2022,4941
+Kedah,post_secondary,female,1/1/2022,3010
+Kedah,post_secondary,male,1/1/2022,1931
+Kelantan,primary,both,1/1/2022,172145
+Kelantan,primary,female,1/1/2022,84365
+Kelantan,primary,male,1/1/2022,87780
+Kelantan,secondary,both,1/1/2022,113329
+Kelantan,secondary,female,1/1/2022,56799
+Kelantan,secondary,male,1/1/2022,56530
+Kelantan,post_secondary,both,1/1/2022,4776
+Kelantan,post_secondary,female,1/1/2022,2969
+Kelantan,post_secondary,male,1/1/2022,1807
+Melaka,primary,both,1/1/2022,86269
+Melaka,primary,female,1/1/2022,41858
+Melaka,primary,male,1/1/2022,44411
+Melaka,secondary,both,1/1/2022,62385
+Melaka,secondary,female,1/1/2022,30906
+Melaka,secondary,male,1/1/2022,31479
+Melaka,post_secondary,both,1/1/2022,2233
+Melaka,post_secondary,female,1/1/2022,1187
+Melaka,post_secondary,male,1/1/2022,1046
+Negeri Sembilan,primary,both,1/1/2022,108856
+Negeri Sembilan,primary,female,1/1/2022,52736
+Negeri Sembilan,primary,male,1/1/2022,56120
+Negeri Sembilan,secondary,both,1/1/2022,83571
+Negeri Sembilan,secondary,female,1/1/2022,41088
+Negeri Sembilan,secondary,male,1/1/2022,42483
+Negeri Sembilan,post_secondary,both,1/1/2022,3179
+Negeri Sembilan,post_secondary,female,1/1/2022,1630
+Negeri Sembilan,post_secondary,male,1/1/2022,1549
+Pahang,primary,both,1/1/2022,151624
+Pahang,primary,female,1/1/2022,74146
+Pahang,primary,male,1/1/2022,77478
+Pahang,secondary,both,1/1/2022,101823
+Pahang,secondary,female,1/1/2022,49982
+Pahang,secondary,male,1/1/2022,51841
+Pahang,post_secondary,both,1/1/2022,3735
+Pahang,post_secondary,female,1/1/2022,1969
+Pahang,post_secondary,male,1/1/2022,1766
+Perak,primary,both,1/1/2022,200543
+Perak,primary,female,1/1/2022,97401
+Perak,primary,male,1/1/2022,103142
+Perak,secondary,both,1/1/2022,160387
+Perak,secondary,female,1/1/2022,78952
+Perak,secondary,male,1/1/2022,81435
+Perak,post_secondary,both,1/1/2022,6376
+Perak,post_secondary,female,1/1/2022,3483
+Perak,post_secondary,male,1/1/2022,2893
+Perlis,primary,both,1/1/2022,24253
+Perlis,primary,female,1/1/2022,11702
+Perlis,primary,male,1/1/2022,12551
+Perlis,secondary,both,1/1/2022,19115
+Perlis,secondary,female,1/1/2022,9339
+Perlis,secondary,male,1/1/2022,9776
+Perlis,post_secondary,both,1/1/2022,1052
+Perlis,post_secondary,female,1/1/2022,504
+Perlis,post_secondary,male,1/1/2022,548
+Pulau Pinang,primary,both,1/1/2022,129598
+Pulau Pinang,primary,female,1/1/2022,63249
+Pulau Pinang,primary,male,1/1/2022,66349
+Pulau Pinang,secondary,both,1/1/2022,98578
+Pulau Pinang,secondary,female,1/1/2022,48416
+Pulau Pinang,secondary,male,1/1/2022,50162
+Pulau Pinang,post_secondary,both,1/1/2022,3454
+Pulau Pinang,post_secondary,female,1/1/2022,1740
+Pulau Pinang,post_secondary,male,1/1/2022,1714
+Sabah,primary,both,1/1/2022,292541
+Sabah,primary,female,1/1/2022,141423
+Sabah,primary,male,1/1/2022,151118
+Sabah,secondary,both,1/1/2022,204780
+Sabah,secondary,female,1/1/2022,100458
+Sabah,secondary,male,1/1/2022,104322
+Sabah,post_secondary,both,1/1/2022,9543
+Sabah,post_secondary,female,1/1/2022,5795
+Sabah,post_secondary,male,1/1/2022,3748
+Sarawak,primary,both,1/1/2022,235319
+Sarawak,primary,female,1/1/2022,113656
+Sarawak,primary,male,1/1/2022,121663
+Sarawak,secondary,both,1/1/2022,189658
+Sarawak,secondary,female,1/1/2022,92723
+Sarawak,secondary,male,1/1/2022,96935
+Sarawak,post_secondary,both,1/1/2022,7502
+Sarawak,post_secondary,female,1/1/2022,4580
+Sarawak,post_secondary,male,1/1/2022,2922
+Selangor,primary,both,1/1/2022,548622
+Selangor,primary,female,1/1/2022,267361
+Selangor,primary,male,1/1/2022,281261
+Selangor,secondary,both,1/1/2022,367664
+Selangor,secondary,female,1/1/2022,182542
+Selangor,secondary,male,1/1/2022,185122
+Selangor,post_secondary,both,1/1/2022,7479
+Selangor,post_secondary,female,1/1/2022,4308
+Selangor,post_secondary,male,1/1/2022,3171
+Terengganu,primary,both,1/1/2022,134557
+Terengganu,primary,female,1/1/2022,65539
+Terengganu,primary,male,1/1/2022,69018
+Terengganu,secondary,both,1/1/2022,97169
+Terengganu,secondary,female,1/1/2022,48852
+Terengganu,secondary,male,1/1/2022,48317
+Terengganu,post_secondary,both,1/1/2022,3405
+Terengganu,post_secondary,female,1/1/2022,1941
+Terengganu,post_secondary,male,1/1/2022,1464
+W.P. Kuala Lumpur,primary,both,1/1/2022,133531
+W.P. Kuala Lumpur,primary,female,1/1/2022,65648
+W.P. Kuala Lumpur,primary,male,1/1/2022,67883
+W.P. Kuala Lumpur,secondary,both,1/1/2022,86197
+W.P. Kuala Lumpur,secondary,female,1/1/2022,42593
+W.P. Kuala Lumpur,secondary,male,1/1/2022,43604
+W.P. Kuala Lumpur,post_secondary,both,1/1/2022,1737
+W.P. Kuala Lumpur,post_secondary,female,1/1/2022,1002
+W.P. Kuala Lumpur,post_secondary,male,1/1/2022,735
+W.P. Labuan,primary,both,1/1/2022,9925
+W.P. Labuan,primary,female,1/1/2022,4773
+W.P. Labuan,primary,male,1/1/2022,5152
+W.P. Labuan,secondary,both,1/1/2022,6821
+W.P. Labuan,secondary,female,1/1/2022,3358
+W.P. Labuan,secondary,male,1/1/2022,3463
+W.P. Labuan,post_secondary,both,1/1/2022,281
+W.P. Labuan,post_secondary,female,1/1/2022,130
+W.P. Labuan,post_secondary,male,1/1/2022,151
+W.P. Putrajaya,primary,both,1/1/2022,22503
+W.P. Putrajaya,primary,female,1/1/2022,10998
+W.P. Putrajaya,primary,male,1/1/2022,11505
+W.P. Putrajaya,secondary,both,1/1/2022,11436
+W.P. Putrajaya,secondary,female,1/1/2022,5298
+W.P. Putrajaya,secondary,male,1/1/2022,6138
+W.P. Putrajaya,post_secondary,both,1/1/2022,139
+W.P. Putrajaya,post_secondary,female,1/1/2022,84
+W.P. Putrajaya,post_secondary,male,1/1/2022,55
