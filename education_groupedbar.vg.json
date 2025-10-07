@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "title": "Student Distribution by Education Stage and State, Malaysia (2022)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/enrolment_school_district.csv"
+  },
+  "transform": [
+    {"filter": "datum.sex == 'both'"},
+    {"filter": {"selection": "state_select"}},
+    {"filter": {"selection": "stage_highlight"}}
+  ],
+  "params": [
+    {
+      "name": "state_select",
+      "select": {"type": "point", "fields": ["state"]},
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Johor",
+          "Kedah",
+          "Kelantan",
+          "Melaka",
+          "Negeri Sembilan",
+          "Pahang",
+          "Perak",
+          "Perlis",
+          "Pulau Pinang",
+          "Sabah",
+          "Sarawak",
+          "Selangor",
+          "Terengganu",
+          "W.P. Kuala Lumpur",
+          "W.P. Labuan",
+          "W.P. Putrajaya"
+        ],
+        "labels": [
+          "All States",
+          "Johor",
+          "Kedah",
+          "Kelantan",
+          "Melaka",
+          "Negeri Sembilan",
+          "Pahang",
+          "Perak",
+          "Perlis",
+          "Pulau Pinang",
+          "Sabah",
+          "Sarawak",
+          "Selangor",
+          "Terengganu",
+          "W.P. Kuala Lumpur",
+          "W.P. Labuan",
+          "W.P. Putrajaya"
+        ],
+        "name": "Select State: "
+      }
+    },
+    {
+      "name": "stage_highlight",
+      "select": {"type": "point", "fields": ["stage"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "state",
+      "type": "nominal",
+      "title": "State",
+      "axis": {"labelAngle": -40}
+    },
+    "y": {
+      "field": "students",
+      "type": "quantitative",
+      "title": "Number of Students"
+    },
+    "color": {
+      "field": "stage",
+      "type": "nominal",
+      "title": "Education Stage"
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "stage", "type": "nominal", "title": "Education Stage"},
+      {"field": "students", "type": "quantitative", "title": "Number of Students"}
+    ],
+    "opacity": {
+      "condition": {"param": "stage_highlight", "value": 1},
+      "value": 0.3
+    }
+  },
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 14},
+    "legend": {"titleFontSize": 13, "labelFontSize": 12}
+  }
+}
