@@ -6,94 +6,126 @@
   "data": {
     "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/enrolment_school_district.csv"
   },
-  "transform": [
-    {"filter": "datum.sex == 'both'"},
-    {"filter": {"selection": "state_select"}},
-    {"filter": {"selection": "stage_highlight"}}
-  ],
-  "params": [
+  "transform": [{ "filter": "datum.sex == 'both'" }],
+  "layer": [
     {
-      "name": "state_select",
-      "select": {"type": "point", "fields": ["state"]},
-      "bind": {
-        "input": "select",
-        "options": [
-          null,
-          "Johor",
-          "Kedah",
-          "Kelantan",
-          "Melaka",
-          "Negeri Sembilan",
-          "Pahang",
-          "Perak",
-          "Perlis",
-          "Pulau Pinang",
-          "Sabah",
-          "Sarawak",
-          "Selangor",
-          "Terengganu",
-          "W.P. Kuala Lumpur",
-          "W.P. Labuan",
-          "W.P. Putrajaya"
-        ],
-        "labels": [
-          "All States",
-          "Johor",
-          "Kedah",
-          "Kelantan",
-          "Melaka",
-          "Negeri Sembilan",
-          "Pahang",
-          "Perak",
-          "Perlis",
-          "Pulau Pinang",
-          "Sabah",
-          "Sarawak",
-          "Selangor",
-          "Terengganu",
-          "W.P. Kuala Lumpur",
-          "W.P. Labuan",
-          "W.P. Putrajaya"
-        ],
-        "name": "Select State: "
+      "params": [
+        {
+          "name": "state_select",
+          "select": { "type": "point", "fields": ["state"] },
+          "bind": {
+            "input": "select",
+            "options": [
+              null,
+              "Johor",
+              "Kedah",
+              "Kelantan",
+              "Melaka",
+              "Negeri Sembilan",
+              "Pahang",
+              "Perak",
+              "Perlis",
+              "Pulau Pinang",
+              "Sabah",
+              "Sarawak",
+              "Selangor",
+              "Terengganu",
+              "W.P. Kuala Lumpur",
+              "W.P. Labuan",
+              "W.P. Putrajaya"
+            ],
+            "labels": [
+              "All States",
+              "Johor",
+              "Kedah",
+              "Kelantan",
+              "Melaka",
+              "Negeri Sembilan",
+              "Pahang",
+              "Perak",
+              "Perlis",
+              "Pulau Pinang",
+              "Sabah",
+              "Sarawak",
+              "Selangor",
+              "Terengganu",
+              "W.P. Kuala Lumpur",
+              "W.P. Labuan",
+              "W.P. Putrajaya"
+            ],
+            "name": "Select State: "
+          }
+        },
+        {
+          "name": "stage_highlight",
+          "select": { "type": "point", "fields": ["stage"] },
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        { "filter": { "param": "state_select" } },
+        { "filter": { "param": "stage_highlight" } }
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State",
+          "axis": { "labelAngle": -40 }
+        },
+        "y": {
+          "field": "students",
+          "type": "quantitative",
+          "title": "Number of Students"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal",
+          "title": "Education Stage",
+          "sort": ["secondary", "primary", "post_secondary"]
+        },
+        "opacity": {
+          "condition": { "param": "stage_highlight", "value": 1 },
+          "value": 0.3
+        },
+        "tooltip": [
+          { "field": "state", "type": "nominal", "title": "State" },
+          { "field": "stage", "type": "nominal", "title": "Education Stage" },
+          { "field": "students", "type": "quantitative", "title": "Number of Students" }
+        ]
       }
     },
     {
-      "name": "stage_highlight",
-      "select": {"type": "point", "fields": ["stage"]},
-      "bind": "legend"
+      "transform": [
+        { "filter": { "param": "state_select" } },
+        { "filter": { "param": "stage_highlight" } },
+        {
+          "stack": "students",
+          "groupby": ["state"],
+          "as": ["lower", "upper"],
+          "sort": [{"field": "stage", "order": "descending"}]
+        },
+        { "calculate": "(datum.lower + datum.upper) / 2", "as": "midpoint" }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dy": -5,
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": { "field": "state", "type": "nominal" },
+        "y": { "field": "midpoint", "type": "quantitative" },
+        "text": { "field": "students", "type": "quantitative", "format": "," },
+        "color": { "value": "black" }
+      }
     }
   ],
-  "mark": "bar",
-  "encoding": {
-    "x": {
-      "field": "state",
-      "type": "nominal",
-      "title": "State",
-      "axis": {"labelAngle": -40}
-    },
-    "y": {
-      "field": "students",
-      "type": "quantitative",
-      "title": "Number of Students"
-    },
-    "color": {
-      "field": "stage",
-      "type": "nominal",
-      "title": "Education Stage"
-    },
-    "tooltip": [
-      {"field": "state", "type": "nominal", "title": "State"},
-      {"field": "stage", "type": "nominal", "title": "Education Stage"},
-      {"field": "students", "type": "quantitative", "title": "Number of Students"}
-    ],
-    "opacity": {
-      "condition": {"param": "stage_highlight", "value": 1},
-      "value": 0.3
-    }
-  },
   "config": {
-    "axis": {"labelFontSize": 12, "titleFontSize": 14},
-    "legend": {"titleFontSize": 13, "labelFontSize": 12}
+    "axis": { "labelFontSize": 12, "titleFontSize": 14 },
+    "legend": { "titleFontSize": 13, "labelFontSize": 12 }
   }
 }
