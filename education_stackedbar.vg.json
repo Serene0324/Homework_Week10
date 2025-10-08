@@ -104,9 +104,12 @@
           "stack": "students",
           "groupby": ["state"],
           "as": ["lower", "upper"],
-          "sort": [{"field": "stage", "order": "descending"}]
+          "sort": [{ "field": "stage", "order": "descending" }]
         },
-        { "calculate": "(datum.lower + datum.upper) / 2", "as": "midpoint" }
+        { "calculate": "(datum.lower + datum.upper) / 2", "as": "midpoint" },
+        {
+          "filter": "indexof(['Selangor','Johor','Sabah','Sarawak','Perak'], datum.state) >= 0"
+        }
       ],
       "mark": {
         "type": "text",
