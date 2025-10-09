@@ -30,9 +30,9 @@
               "Sarawak",
               "Selangor",
               "Terengganu",
-              "W.P. Kuala Lumpur",
-              "W.P. Labuan",
-              "W.P. Putrajaya"
+              "Kuala Lumpur",
+              "Labuan",
+              "Putrajaya"
             ],
             "labels": [
               "All States",
@@ -49,9 +49,9 @@
               "Sarawak",
               "Selangor",
               "Terengganu",
-              "W.P. Kuala Lumpur",
-              "W.P. Labuan",
-              "W.P. Putrajaya"
+              "Kuala Lumpur",
+              "Labuan",
+              "Putrajaya"
             ],
             "name": "Select State: "
           }
@@ -83,7 +83,7 @@
           "field": "stage",
           "type": "nominal",
           "title": "Education Stage",
-          "sort": ["secondary", "primary", "post_secondary"]
+          "sort": ["primary", "secondary", "post-secondary"]
         },
         "opacity": {
           "condition": { "param": "stage_highlight", "value": 1 },
