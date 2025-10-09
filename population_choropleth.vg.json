@@ -17,12 +17,12 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/malaysia.geojson",
-        "format": {"type": "json", "property": "features"}
+        "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/ne_10m_admin_1_states_provinces.json",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
       },
       "transform": [
         {
-          "lookup": "properties.NAME_1",
+          "lookup": "properties.name",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/total_population_2022.csv"
@@ -49,7 +49,7 @@
           "title": "Population (% of total)"
         },
         "tooltip": [
-          {"field": "properties.NAME_1", "type": "nominal", "title": "State"},
+          {"field": "properties.name", "type": "nominal", "title": "State"},
           {"field": "population", "type": "quantitative", "title": "Population ('000)"},
           {
             "field": "population_normalized",
