@@ -25,7 +25,7 @@
           "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week9/main/total_population_2022.csv"
+              "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/total_population_2022.csv"
             },
             "key": "state",
             "fields": ["population"]
